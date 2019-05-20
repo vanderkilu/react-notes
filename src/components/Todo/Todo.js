@@ -7,7 +7,7 @@ function Todo(props) {
                 onClick={props.onClick}>
             </p>
             <p className={props.todo.completed ? "todo__task completed ":"todo__task"}>{props.todo.task}</p>
-            <p className="todo__delete-icon">&times;</p>
+            <i className="todo__delete-icon fa fa-times"></i>
         </div>
     )
 }

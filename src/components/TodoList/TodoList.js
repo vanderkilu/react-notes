@@ -51,7 +51,7 @@ class TodoList extends React.Component {
                 <form className="form" onSubmit={(e)=> this.addTask(e) }>
                     <input type="text" 
                         className="input" 
-                        placeholder="enter task"
+                        placeholder="Add a task ..."
                         value={this.state.task}
                         onChange={ (e) => this.handleChange(e) }
                     />

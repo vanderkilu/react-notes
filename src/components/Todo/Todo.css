@@ -23,7 +23,7 @@
 }
 
 .todo__delete-icon {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: #e57373;
     transition: all 0.5s;
     cursor: pointer;

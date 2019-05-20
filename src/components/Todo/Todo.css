@@ -34,6 +34,8 @@
     opacity: 1;
 }
 
-.done {
+.completed {
     text-decoration-line: line-through;
+    font-style: italic;
+    color: var(--text-color-secondary);
 }

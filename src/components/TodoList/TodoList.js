@@ -31,15 +31,19 @@ class TodoList extends React.Component {
         })
     }
     markDone(id) {
-        const todo = this.state.todos.find(todo => todo.id === id )
-        todo.completed = true
-        console.log(todo)
+        const updatedTodos = this.state.todos.map( todo => (todo.id === id) 
+                ? Object.assign({}, todo, {completed: !todo.completed})
+                : todo )
+        this.setState({
+            todos:  updatedTodos
+        })
+        console.log(this.state.todos)
     }
     render() {
         const tasks = this.state.todos.map(todo => 
             <Todo todo={todo} 
                 key={todo.id}
-                onClick={this.markDone(todo.id)}
+                onClick={()=> this.markDone(todo.id)}
             />
         )
         return (

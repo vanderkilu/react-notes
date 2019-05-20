@@ -1,4 +1,29 @@
 .todoWrapper {
     padding: 3rem 6rem;
-    background-color: #f3e5f5;
+    background-color:#eeeeee;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.03);
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.input {
+    width: 80%;
+    padding: 3rem;
+    border: none;
+    font-family: inherit;
+    background-color: white;
+}
+
+.input::placeholder {
+    font-size: 1.8rem;
+    color: var(--text-color-secondary);
+}
+.input:focus {
+    outline: none;
 }

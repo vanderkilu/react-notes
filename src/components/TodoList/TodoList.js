@@ -19,6 +19,12 @@ class TodoList extends React.Component {
         )
         return (
             <div className="todoWrapper">
+                <form className="form">
+                    <input type="text" 
+                        className="input" 
+                        placeholder="enter task"
+                    />
+                </form>
                 {tasks}
             </div>
         )

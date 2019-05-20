@@ -5,7 +5,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.3rem;
+    position: relative;
 }
 
 .todo__done-btn {

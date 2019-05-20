@@ -3,8 +3,9 @@ import './Todo.css'
 function Todo(props) {
     return (
         <div className="todo">
-            <p className="todo__done-btn"></p>
-            <p className="todo__task">{props.task.task}</p>
+            <p className={props.todo.completed ? "todo__done-btn done" : "todo__done-btn"}
+                onClick={props.onClick}></p>
+            <p className="todo__task">{props.todo.task}</p>
             <p className="todo__delete-icon">&times;</p>
         </div>
     )

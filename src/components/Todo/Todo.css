@@ -1,10 +1,11 @@
 .todo {
-    padding: 0.5rem;
+    padding: 0.2rem 2rem;
     background-color: white;
     border-radius: 2px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.1rem;
 }
 
 .todo__done-btn {
@@ -19,7 +20,7 @@
     font-size: 1.5rem;
 }
 
-.todo__delete-btn {
-    font-size: 1.4rem;
-    color: #ffcdd2;
+.todo__delete-icon {
+    font-size: 1.5rem;
+    color: #e57373;
 }

@@ -1,27 +1,31 @@
 .todoWrapper {
-    padding: 3rem 6rem;
-    background-color:#eeeeee;
-    box-shadow: 0 1rem 2rem rgba(0,0,0,0.03);
-}
-
-.form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 6rem 12rem;
+}
+
+.form {
     margin: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .input {
-    width: 80%;
-    padding: 3rem;
+    width: 100%;
+    padding: 1.5rem 2rem;
     border: none;
+    border-radius: 0.6rem;
     font-family: inherit;
     background-color: white;
 }
 
 .input::placeholder {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: var(--text-color-secondary);
 }
 .input:focus {

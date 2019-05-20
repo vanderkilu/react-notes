@@ -1,12 +1,12 @@
 .todo {
-    padding: 0.1rem 2rem;
+    padding: 0.02rem 2rem;
     background-color: white;
-    border-radius: 2px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.3rem;
-    position: relative;
+    margin-bottom: 0.5rem;
+    border-radius: 0.6rem;
+    width: 100%;
 }
 
 .todo__done-btn {
@@ -19,7 +19,7 @@
 
 .todo__task {
     color: var(--text-color-primary);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .todo__delete-icon {

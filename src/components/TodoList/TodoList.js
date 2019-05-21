@@ -1,7 +1,7 @@
 import React from 'react'
 import Todo from '../Todo/Todo.js'
 import './TodoList.css'
-import { CssTransitionGroup } from 'react-transition-group'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -68,13 +68,13 @@ class TodoList extends React.Component {
                         onChange={ (e) => this.handleChange(e) }
                     />
                 </form>
-                <CssTransitionGroup
+                <ReactCSSTransitionGroup
                     transitionName="easeIn"
                     transitionEnterTimeout={500}
                     transtionLeaveTimeout={300}
                 >
                     {tasks}
-                </CssTransitionGroup>
+                </ReactCSSTransitionGroup>
             </div>
         )
     }

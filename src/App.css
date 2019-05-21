@@ -15,5 +15,25 @@
 }
 .emoji {
     color: var(--color-tertiary);
-    margin-left: 0.5rem;
+    margin: 0  0.5rem;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer__by {
+    font-size: 1.3rem;
+    color: white;
+}
+.theme {
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 1px solid grey;
+    margin: 0 1rem;
+    background-color: white;
+    cursor: pointer;
 }

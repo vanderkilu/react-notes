@@ -7,7 +7,7 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
-  background-color: #183048;
+  background-color: var(--bg-color);
 }
 
 :root {
@@ -15,5 +15,17 @@ body {
   --text-color-secondary: #bdbdbd;
   --color-primary: #4a148c;
   --color-tertiary: #9c27b0;
+  --bg-color:  #183048;
+}
 
+a:link, a:visited {
+  text-decoration: none;
+  color: var(--color-tertiary);
+}
+.light-theme {
+  --text-color-primary: red;
+  --text-color-secondary: red;
+  --color-primary: red;
+  --color-tertiary: red;
+  --bg-color:  red;
 }

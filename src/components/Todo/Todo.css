@@ -15,7 +15,7 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    border: 0.5px solid #bdbdbd;
+    border: 0.5px solid #9e9e9e;
     cursor: pointer;
 }
 .todo__check-icon {

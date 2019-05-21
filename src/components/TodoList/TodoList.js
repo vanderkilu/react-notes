@@ -86,7 +86,7 @@ class TodoList extends React.Component {
                 <ReactCSSTransitionGroup className="transitioner"
                     transitionName="fade"
                     transitionEnterTimeout={500}
-                    transtionLeaveTimeout={300}
+                    transitionLeaveTimeout={300}
                 >
                     {tasks}
                 </ReactCSSTransitionGroup>

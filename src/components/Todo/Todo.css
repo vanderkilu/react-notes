@@ -44,5 +44,5 @@
     color: var(--text-color-secondary);
 }
 .todo-complete {
-    background-color: #4a148c;
+    background-color: var(--color-primary);
 }

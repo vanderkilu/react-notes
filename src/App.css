@@ -5,7 +5,7 @@
 .app-name {
     font-size: 3rem;
     text-align: center;
-    color: #9c27b0;
+    color: var(--color-tertiary);
 }
 
 .app-text {
@@ -14,6 +14,6 @@
     color: white;
 }
 .emoji {
-    color: #9c27b0;
+    color: var(--color-tertiary);
     margin-left: 0.5rem;
 }

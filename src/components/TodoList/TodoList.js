@@ -1,7 +1,7 @@
 import React from 'react'
 import Todo from '../Todo/Todo.js'
 import './TodoList.css'
-import { getTasks, storeTask } from '../../utils/index'
+import { getTasks, storeTask, removeTask } from '../../utils/index'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class TodoList extends React.Component {
@@ -32,6 +32,7 @@ class TodoList extends React.Component {
             task: ""
         }))
         e.preventDefault()
+        storeTask(newTask)
     }
     handleChange(e) {
         this.setState({
@@ -50,10 +51,11 @@ class TodoList extends React.Component {
         e.stopPropagation();
         const newTodos = this.state.todos.filter(todo => todo.id !== id)
         this.setState({todos: newTodos})
+        removeTask(id)
     }
     componentDidMount() {
         const todos = getTasks()
-        if (todos) {
+        if (todos.length > 0 ) {
             this.setState({
                 todos: todos
             })

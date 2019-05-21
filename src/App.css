@@ -48,3 +48,9 @@
     background-color: var(--theme-indicator);
     cursor: pointer;
 }
+
+@media only screen and (max-width: 900px) { 
+    .wrapper {
+        width: 80%;
+    }
+}

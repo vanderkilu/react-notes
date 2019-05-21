@@ -3,7 +3,7 @@ import './Todo.css'
 function Todo(props) {
     let isDoneElem
     if (!props.todo.completed) {
-        isDoneElem = <p className="todo__done-icon"></p>
+        isDoneElem = <i className="far fa-circle todo__done-icon"></i>
     }
     else {
         isDoneElem = <i className="fa fa-check todo__check-icon"></i>

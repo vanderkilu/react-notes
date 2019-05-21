@@ -2,3 +2,17 @@
     width: 50%;
     margin: 10rem auto;
 }
+.app-name {
+    font-size: 3rem;
+    text-align: center;
+    color: #9c27b0;
+}
+
+.app-text {
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+}
+.emoji {
+    color: #9c27b0;
+}

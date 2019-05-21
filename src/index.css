@@ -17,6 +17,7 @@ body {
   --color-primary: #4a148c;
   --color-tertiary: #9c27b0;
   --bg-color:  #183048;
+  --theme-indicator: white;
 }
 
 a:link, a:visited {
@@ -28,4 +29,5 @@ a:link, a:visited {
   --text-color-secondary: #424242;
   --color-tertiary: #000000;
   --bg-color:  #e0e0e0;
+  --theme-indicator: #183048;
 }

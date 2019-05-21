@@ -7,13 +7,16 @@ import { getTasks,
         } from '../../utils/index'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
+let counter = 2
+
 class TodoList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             task: "",
             todos: [
-                {task: "going parting", id:0, completed: false},
+                {task: "app uses local storage for storing tasks", id:0, completed: false},
+                {task: "first react app after learning it for 3days", id:1, completed: false}
             ]
         }
     }
@@ -24,9 +27,8 @@ class TodoList extends React.Component {
         if (this._isFieldEmpty()) {
             return null
         }
-        const id = this.state.todos.length - 1
         const newTask = {
-            id: id + 1,
+            id: counter++,
             task: this.state.task,
             completed: false
         }

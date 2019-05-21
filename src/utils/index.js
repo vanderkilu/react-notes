@@ -16,12 +16,6 @@ export function getTasks() {
     }
     return []
 }
-
-export function removeTask(id) {
-    let todos =  JSON.parse(localStorage.getItem(APP_NAME))
-    if (todos !== undefined || todos !== null) {
-        todos = todos.filter( todo => todo.id !== id )
-        localStorage.setItem(APP_NAME, JSON.stringify(todos))
-    }
-   
+export function updateTasks(tasks) {
+    localStorage.setItem(APP_NAME, JSON.stringify(tasks))
 }

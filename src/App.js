@@ -26,6 +26,7 @@ function App() {
                     target="_blank" rel="noopener noreferrer"> kweku_kilu</a>
           </p>
           <div className="footer__theme">
+              <p className="theme-text">Switch theme </p>
               <span className="theme" onClick={ ()=> handleClick() }></span>
           </div>
        </div>

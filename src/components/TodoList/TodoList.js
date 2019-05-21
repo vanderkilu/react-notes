@@ -12,7 +12,13 @@ class TodoList extends React.Component {
             ]
         }
     }
+    _isFieldEmpty(){
+        return this.state.task === ""
+    }
     addTask(e) {
+        if (this._isFieldEmpty()) {
+            return null
+        }
         const id = this.state.todos.length - 1
         const newTask = {
             id: id + 1,
@@ -37,7 +43,6 @@ class TodoList extends React.Component {
         this.setState({
             todos:  updatedTodos
         })
-        console.log(this.state.todos)
     }
     deleteTodo(e,id) {
         e.stopPropagation();

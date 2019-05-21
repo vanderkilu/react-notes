@@ -7,19 +7,24 @@
     margin-bottom: 0.5rem;
     border-radius: 0.6rem;
     width: 100%;
-}
-
-.todo__done-btn {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    border: 0.5px solid #e0e0e0;
+    transition: all 0.5s;
     cursor: pointer;
 }
 
+.todo__done-icon{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0.5px solid #bdbdbd;
+    cursor: pointer;
+}
+.todo__check-icon {
+    color: white;
+    font-size: 1.4rem;
+}
 .todo__task {
     color: var(--text-color-primary);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .todo__delete-icon {
@@ -36,6 +41,8 @@
 
 .completed {
     text-decoration-line: line-through;
-    font-style: italic;
     color: var(--text-color-secondary);
+}
+.todo-complete {
+    background-color: #304860;
 }

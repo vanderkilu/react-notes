@@ -14,7 +14,7 @@ function Todo(props) {
             onClick={props.onClick}>
             {isDoneElem}
             <p className={props.todo.completed ? "todo__task completed ":"todo__task"}>{props.todo.task}</p>
-            <i className="todo__delete-icon fa fa-times"></i>
+            <i className="todo__delete-icon fa fa-times" onClick={props.onDelete}></i>
         </div>
     )
 }

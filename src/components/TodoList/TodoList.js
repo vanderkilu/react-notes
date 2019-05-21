@@ -39,11 +39,17 @@ class TodoList extends React.Component {
         })
         console.log(this.state.todos)
     }
+    deleteTodo(e,id) {
+        e.stopPropagation();
+        const newTodos = this.state.todos.filter(todo => todo.id !== id)
+        this.setState({todos: newTodos})
+    }
     render() {
         const tasks = this.state.todos.map(todo => 
             <Todo todo={todo} 
                 key={todo.id}
                 onClick={()=> this.markDone(todo.id)}
+                onDelete={(e)=> this.deleteTodo(e,todo.id)}
             />
         )
         return (

@@ -41,7 +41,7 @@
 
 .completed {
     text-decoration-line: line-through;
-    color: var(--text-color-secondary);
+    color: var(--text-color-tertiary);
 }
 .todo-complete {
     background-color: var(--color-primary);

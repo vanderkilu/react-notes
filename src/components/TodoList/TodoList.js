@@ -68,8 +68,8 @@ class TodoList extends React.Component {
                         onChange={ (e) => this.handleChange(e) }
                     />
                 </form>
-                <ReactCSSTransitionGroup
-                    transitionName="easeIn"
+                <ReactCSSTransitionGroup className="transitioner"
+                    transitionName="fade"
                     transitionEnterTimeout={500}
                     transtionLeaveTimeout={300}
                 >

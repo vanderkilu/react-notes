@@ -3,11 +3,11 @@ import Todo from '../Todo/Todo.js'
 import './TodoList.css'
 import { getTasks, 
          storeTask,
-         updateTasks
+         updateTasks,
+         uuidv4
         } from '../../utils/index'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-let counter = 2
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -28,12 +28,12 @@ class TodoList extends React.Component {
             return null
         }
         const newTask = {
-            id: counter++,
+            id: uuidv4(),
             task: this.state.task,
             completed: false
         }
         this.setState((state)=> ({
-            todos: state.todos.concat([newTask]),
+            todos: state.todos.concat(newTask),
             task: ""
         }))
         e.preventDefault()
@@ -59,7 +59,7 @@ class TodoList extends React.Component {
         this.setState({todos: newTodos})
         updateTasks(newTodos)
     }
-    componentDidMount() {
+    componentWillMount() {
         const todos = getTasks()
         if (todos.length > 0 ) {
             this.setState({

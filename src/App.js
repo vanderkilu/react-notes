@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import TodoList from './components/TodoList/TodoList'
-
+import { DragDropContext } from 'react-beautiful-dnd'
 function App() {
   const handleClick = () => {
     const html = document.getElementsByTagName('html')[0]
@@ -15,7 +15,9 @@ function App() {
               ⌛ ✍️
           </span>
       </p>
-       <TodoList/>
+      <DragDropContext>
+        <TodoList></TodoList>
+      </DragDropContext>
        <div className="footer">
           <p className="footer__by">
             Made With  

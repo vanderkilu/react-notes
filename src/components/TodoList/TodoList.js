@@ -1,10 +1,9 @@
 import React from 'react'
 import Todo from '../Todo/Todo.js'
 import './TodoList.css'
+import {Droppable} from 'react-beautiful-dnd'
 import { getTasks, 
-         storeTask,
          updateTasks,
-         uuidv4
         } from '../../utils/index'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
@@ -27,17 +26,15 @@ class TodoList extends React.Component {
         if (this._isFieldEmpty()) {
             return null
         }
-        const newTask = {
-            id: uuidv4(),
-            task: this.state.task,
-            completed: false
-        }
         this.setState((state)=> ({
-            todos: state.todos.concat(newTask),
+            todos: [...state.todos, {
+                id: state.todos.length + 1,
+                task: state.task,
+                completed: false
+            }],
             task: ""
-        }))
+        }), ()=> updateTasks(this.state.todos))
         e.preventDefault()
-        storeTask(newTask)
     }
     handleChange(e) {
         this.setState({
@@ -90,7 +87,16 @@ class TodoList extends React.Component {
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}
                 >
-                    {tasks}
+                 <Droppable droppableId="todolist">
+                    {provided => (
+                        <div
+                            ref={provided.innerRef}
+                            {...provided.droppableProps}>
+                        {tasks}
+                        {provided.placeholder}
+                        </div>
+                    )}
+                </Droppable>
                 </ReactCSSTransitionGroup>
             </div>
         )

@@ -5,11 +5,11 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
-    border-radius: 0.6rem;
+    border-radius: 0.3rem;
     width: 100%;
-    transition: all 0.5s;
     cursor: pointer;
     word-break: break-word;
+    user-select: none;
 }
 
 .todo__done-icon{

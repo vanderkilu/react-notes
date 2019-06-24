@@ -10,14 +10,15 @@ function Todo(props) {
         isDoneElem = <i className="fa fa-check todo__check-icon"></i>
     }
     return (
-        <Draggable  key={props.todo.id} draggableId={props.todo.id.toString()}  index={props.index}>
+        <Draggable draggableId={props.todo.id.toString()}  index={props.index}>
         {(provided)=> (
             <div 
                 ref={provided.innerRef}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
                 className={props.todo.completed ? " todo todo-complete" : "todo" } 
-                onClick={props.onClick}>
+                onClick={props.onClick}
+                style={{...provided.draggableProps.style}}>
 
                 {isDoneElem}
                 <p className={props.todo.completed ? "todo__task completed ":"todo__task"}>

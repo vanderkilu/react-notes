@@ -1,10 +1,11 @@
 import React from 'react'
 import Todo from '../Todo/Todo.js'
 import './TodoList.css'
-import {Droppable} from 'react-beautiful-dnd'
+import {DragDropContext,Droppable} from 'react-beautiful-dnd'
 import { getTasks, 
          updateTasks,
         } from '../../utils/index'
+
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
@@ -56,6 +57,29 @@ class TodoList extends React.Component {
         this.setState({todos: newTodos})
         updateTasks(newTodos)
     }
+    reorder (list, startIndex, endIndex){
+        const result = Array.from(list);
+        const [removed] = result.splice(startIndex, 1);
+        result.splice(endIndex, 0, removed);
+        return result;
+    }
+    onDragEnd(result) {
+        // dropped outside the list
+        if (!result.destination) {
+          return;
+        }
+        if (result.destination.index === result.source.index) {
+            return;
+        }
+        const items = this.reorder(
+          this.state.todos,
+          result.source.index,
+          result.destination.index
+        );
+        this.setState({
+          todos: items
+        });
+    }    
     componentWillMount() {
         const todos = getTasks()
         if (todos.length > 0 ) {
@@ -65,13 +89,21 @@ class TodoList extends React.Component {
         }
     }
     render() {
-        const tasks = this.state.todos.map((todo,i) => 
+        const tasks = this.state.todos.map((todo,i) => (
             <Todo todo={todo} 
                 key={todo.id}
                 onClick={()=> this.markDone(todo.id)}
                 onDelete={(e)=> this.deleteTodo(e,todo.id)}
                 index={i}
             />
+        ))
+        const animatedTasks = (
+            <ReactCSSTransitionGroup className="transitioner"
+                    transitionName="fade"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+                    {tasks}
+            </ReactCSSTransitionGroup>
         )
         return (
             <div className="todoWrapper">
@@ -83,22 +115,20 @@ class TodoList extends React.Component {
                         onChange={ (e) => this.handleChange(e) }
                     />
                 </form>
-                {/* <ReactCSSTransitionGroup className="transitioner"
-                    transitionName="fade"
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}
-                > */}
-                 <Droppable droppableId="todolist">
-                    {provided => (
-                        <div
-                            ref={provided.innerRef}
-                            {...provided.droppableProps}>
-                        {tasks}
-                        {provided.placeholder}
-                        </div>
-                    )}
-                </Droppable>
-                {/* </ReactCSSTransitionGroup> */}
+                
+                <DragDropContext onDragEnd={this.onDragEnd.bind(this)} >
+                    <Droppable droppableId="todolist" className="transitioner">
+                        {provided => (
+                            <div
+                                ref={provided.innerRef}
+                                {...provided.droppableProps}>
+                            {animatedTasks}
+                            {provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
+                </DragDropContext>
+               
             </div>
         )
     }

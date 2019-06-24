@@ -16,7 +16,7 @@ class TodoList extends React.Component {
             task: "",
             todos: [
                 {task: "app uses local storage for storing tasks", id:1, completed: false},
-                {task: "first react app after learning it for 3days", id:2, completed: false}
+                {task: "rearrange task by dragging them", id:2, completed: false}
             ]
         }
     }

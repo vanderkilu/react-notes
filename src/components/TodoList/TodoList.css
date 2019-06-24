@@ -1,5 +1,5 @@
 .todoWrapper {
-    padding: 4rem 12rem;
+    padding: 4rem 10rem;
 }
 
 .form {
@@ -7,7 +7,7 @@
 }
 
 .input {
-    width: 100%;
+    width: 80%;
     padding: 1.5rem 2rem;
     border: none;
     border-radius: 0.3rem;
@@ -45,6 +45,9 @@
 }
 @media only screen and (max-width: 900px) { 
     .todoWrapper {
-        padding: 2rem 4rem;
+        padding: 2rem;
+    }
+    .input {
+        width: 90%;
     }
 }

@@ -116,8 +116,8 @@ class TodoList extends React.Component {
                     />
                 </form>
                 
-                <DragDropContext onDragEnd={this.onDragEnd.bind(this)} >
-                    <Droppable droppableId="todolist" className="transitioner">
+                <DragDropContext onDragEnd={this.onDragEnd.bind(this)} className="transitioner" >
+                    <Droppable droppableId="todolist" >
                         {provided => (
                             <div
                                 ref={provided.innerRef}

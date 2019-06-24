@@ -6,7 +6,7 @@
     align-items: center;
     margin-bottom: 0.5rem;
     border-radius: 0.3rem;
-    width: 100%;
+    width: 80%;
     cursor: pointer;
     word-break: break-word;
     user-select: none;
@@ -45,4 +45,10 @@
 }
 .todo-complete {
     background-color: var(--color-primary);
+}
+
+@media only screen and (max-width: 900px) { 
+    .todo {
+        width: 90%;
+    }
 }

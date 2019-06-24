@@ -14,8 +14,8 @@ class TodoList extends React.Component {
         this.state = {
             task: "",
             todos: [
-                {task: "app uses local storage for storing tasks", id:0, completed: false},
-                {task: "first react app after learning it for 3days", id:1, completed: false}
+                {task: "app uses local storage for storing tasks", id:1, completed: false},
+                {task: "first react app after learning it for 3days", id:2, completed: false}
             ]
         }
     }
@@ -65,11 +65,12 @@ class TodoList extends React.Component {
         }
     }
     render() {
-        const tasks = this.state.todos.map(todo => 
+        const tasks = this.state.todos.map((todo,i) => 
             <Todo todo={todo} 
                 key={todo.id}
                 onClick={()=> this.markDone(todo.id)}
                 onDelete={(e)=> this.deleteTodo(e,todo.id)}
+                index={i}
             />
         )
         return (
@@ -82,11 +83,11 @@ class TodoList extends React.Component {
                         onChange={ (e) => this.handleChange(e) }
                     />
                 </form>
-                <ReactCSSTransitionGroup className="transitioner"
+                {/* <ReactCSSTransitionGroup className="transitioner"
                     transitionName="fade"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}
-                >
+                > */}
                  <Droppable droppableId="todolist">
                     {provided => (
                         <div
@@ -97,7 +98,7 @@ class TodoList extends React.Component {
                         </div>
                     )}
                 </Droppable>
-                </ReactCSSTransitionGroup>
+                {/* </ReactCSSTransitionGroup> */}
             </div>
         )
     }

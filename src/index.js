@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { getTheme } from './utils'
+
+const html = document.getElementsByTagName('html')[0]
+const colorString = getTheme()
+const colorClass = colorString === '' ? 'dark-theme' : colorString
+html.classList.add(colorClass)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

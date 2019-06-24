@@ -19,6 +19,15 @@ body {
   --bg-color:  #183048;
   --theme-indicator: white;
 }
+.dark-theme {
+  --text-color-primary: #616161;
+  --text-color-secondary: white;
+  --text-color-tertiary: white;
+  --color-primary: #4a148c;
+  --color-tertiary: #9c27b0;
+  --bg-color:  #183048;
+  --theme-indicator: white;
+}
 
 a:link, a:visited {
   text-decoration: none;

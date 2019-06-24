@@ -1,8 +1,11 @@
 import React from 'react'
+import { saveTheme } from '../utils'
 
 function Footer() {
     const handleClick = () => {
         const html = document.getElementsByTagName('html')[0]
+        if (!html.classList.contains('light-theme')) saveTheme('light-theme')
+        else saveTheme('dark-theme')
         html.classList.toggle('light-theme')
     }
     return (

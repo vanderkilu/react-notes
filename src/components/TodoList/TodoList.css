@@ -1,13 +1,21 @@
 .todoWrapper {
-    padding: 4rem 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 12rem;
 }
 
 .form {
-    margin: 2rem auto;
+    margin: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
 .input {
-    width: 80%;
+    width: 100%;
     padding: 1.5rem 2rem;
     border: none;
     border-radius: 0.3rem;
@@ -43,11 +51,15 @@
     transition: all 300ms ease-in;
     transform: translateX(6rem);
 }
+.transitioner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 @media only screen and (max-width: 900px) { 
     .todoWrapper {
-        padding: 2rem;
-    }
-    .input {
-        width: 90%;
+        padding: 2rem 4rem;
     }
 }

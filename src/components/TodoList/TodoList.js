@@ -4,6 +4,7 @@ import './TodoList.css'
 import {DragDropContext,Droppable} from 'react-beautiful-dnd'
 import { getTasks, 
          updateTasks,
+         uuidv4
         } from '../../utils/index'
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -29,12 +30,13 @@ class TodoList extends React.Component {
         }
         this.setState((state)=> ({
             todos: [...state.todos, {
-                id: state.todos.length + 1,
+                id: uuidv4(),
                 task: state.task,
                 completed: false
             }],
             task: ""
-        }), ()=> updateTasks(this.state.todos))
+        }), ()=> {
+            updateTasks(this.state.todos)})
         e.preventDefault()
     }
     handleChange(e) {

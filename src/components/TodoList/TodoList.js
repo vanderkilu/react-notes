@@ -63,10 +63,10 @@ class TodoList extends React.Component {
         updateTasks(newTodos)
     }
     reorder (list, startIndex, endIndex){
-        const result = Array.from(list);
-        const [removed] = result.splice(startIndex, 1);
-        result.splice(endIndex, 0, removed);
-        return result;
+        const result = Array.from(list)
+        const [removed] = result.splice(startIndex, 1)
+        result.splice(endIndex, 0, removed)
+        return result
     }
     onDragEnd(result) {
         // dropped outside the list
@@ -81,9 +81,9 @@ class TodoList extends React.Component {
           result.source.index,
           result.destination.index
         );
-        this.setState({
-          todos: items
-        });
+        this.setState(()=> ({
+            todos: items
+        }), ()=> updateTasks(this.state.todos))
     }   
     toggleEmojiPickerShow() {
         this.setState({

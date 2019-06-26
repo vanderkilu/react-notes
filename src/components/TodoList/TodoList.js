@@ -8,6 +8,8 @@ import { getTasks,
         } from '../../utils/index'
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import 'emoji-mart/css/emoji-mart.css'
+import { Picker } from 'emoji-mart'
 
 
 class TodoList extends React.Component {
@@ -18,7 +20,8 @@ class TodoList extends React.Component {
             todos: [
                 {task: "app uses local storage for storing tasks", id:1, completed: false},
                 {task: "rearrange task by dragging them", id:2, completed: false}
-            ]
+            ],
+            showEmojiPicker: false
         }
     }
     _isFieldEmpty(){
@@ -81,7 +84,18 @@ class TodoList extends React.Component {
         this.setState({
           todos: items
         });
-    }    
+    }   
+    toggleEmojiPickerShow() {
+        this.setState({
+            showEmojiPicker: !this.state.showEmojiPicker
+        })
+    } 
+    addEmoji(emoji) {
+        this.setState((state)=> ({
+            task: state.task + emoji.native,
+            showEmojiPicker: false
+        }))
+    }
     componentWillMount() {
         const todos = getTasks()
         if (todos.length > 0 ) {
@@ -107,6 +121,7 @@ class TodoList extends React.Component {
                     {tasks}
             </ReactCSSTransitionGroup>
         )
+        const showEmojiPicker = this.state.showEmojiPicker
         return (
             <div className="todoWrapper">
                 <form className="form" onSubmit={(e)=> this.addTask(e) }>
@@ -116,8 +131,20 @@ class TodoList extends React.Component {
                         value={this.state.task}
                         onChange={ (e) => this.handleChange(e) }
                     />
+                    <span role="img" className="emoji-toggle" 
+                          aria-label="emoji-toggle"
+                          onClick={this.toggleEmojiPickerShow.bind(this)}>
+                        🙂
+                    </span>
                 </form>
-                
+                <span className='picker'>
+                    { showEmojiPicker &&
+                        <Picker 
+                            onSelect={this.addEmoji.bind(this)} 
+                            set="emojione" 
+                        />
+                    }
+                </span>
                 <DragDropContext onDragEnd={this.onDragEnd.bind(this)} className="transitioner" >
                     <Droppable droppableId="todolist" className="transitioner">
                         {provided => (

@@ -139,7 +139,7 @@ class TodoList extends React.Component {
                 </form>
                 <span className='picker'>
                     { showEmojiPicker &&
-                        <Picker 
+                        <Picker className="epicker"
                             onSelect={this.addEmoji.bind(this)} 
                             set="emojione" 
                         />

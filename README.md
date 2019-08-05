@@ -1,4 +1,4 @@
-live demo available here  [https://todoly.netlify.com/](todoly.netlify.com).
+live demo available here  [todoly.netlify.com](https://todoly.netlify.com)
 
 ## Available Scripts
 
